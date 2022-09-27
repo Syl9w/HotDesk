@@ -1,4 +1,4 @@
-# HotDesk
+# HotDesk Project
 HotDesk is WebAPI buit on .Net Core 3.1. By this API you can manage booking of desks in the office.
 
 # Models
