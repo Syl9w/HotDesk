@@ -1,4 +1,4 @@
-# HotDesk
+# HotDesk!
 HotDesk is WebAPI buit on .Net Core 3.1. By this API you can manage booking of desks in the office.
 
 # Models
@@ -17,7 +17,7 @@ I used different Data tranfer objects (Dtos) in order to meke it easier to buid 
 # Database
 In order to complete project in a few days I decided to use InMemoryDatabase. It has some disadvantages. For example, if you rerun your instance all data that you wrote will be deleted (except for mocked data).
 
-# Mocked Data 
+# Mocked Data
 There are some mocked data which will help you if you don't want to create your own data. You can find it in `HotDesk/DataAccess/DataMock.cs`.
 
 # Authentication
@@ -44,7 +44,7 @@ All methods are with [AllowAnonymous] attribute so you do not need write your to
     "token":          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjIiLCJnaXZlbl9uYW1lIjoiRWxvbiIsImZhbWlseV9uYW1lIjoiTXVzayIsIm5iZiI6MTY2MDQ4NDI0NiwiZXhwIjoxNjYwNTcwNjQ2LCJpYXQiOjE2NjA0ODQyNDZ9.RDMkUG5HIVXTuuJqBnPc2lUr3zqUCNzPBqxZ-NiL1kM"
   }
   ```
-  
+
 - [HttpPost] /api/Authentication/register
   - in the body of the request you need to enter email, first name, last name, role and password. Role can be any string, but if you want to create user to manage desks and locations please enter `Admin` with capital letter
   ```
@@ -56,7 +56,7 @@ All methods are with [AllowAnonymous] attribute so you do not need write your to
     "password":"123"
   }
   ```
-  
+
 ## Location controller
 - [HttpGet] /api/Location/
    - lists all locations. For example,
@@ -80,7 +80,7 @@ All methods are with [AllowAnonymous] attribute so you do not need write your to
     "message": null
   }
   ```
-  
+
 - [HttpPost] /api/Location/
   - adds new location. In the body of request enter name of a new Location. For example,
   ```
@@ -88,12 +88,12 @@ All methods are with [AllowAnonymous] attribute so you do not need write your to
     "locationName":"Conference Hall4"
   }
   ```
-  
+
  - [HttpDelete] /api/Location/{locationId}
-  - deletes location with id `locationId`. 
+  - deletes location with id `locationId`.
   - You cannot delete location if you are not an `Admin`
   - You cannot delete location if there is a desk on this location
-  
+
  ## Desk Controller
  - [HttpGet] /api/Desk/
   - lists all desks. For example,
@@ -139,7 +139,7 @@ All methods are with [AllowAnonymous] attribute so you do not need write your to
     "message": null
   }
   ```
-  
+
 - [HttpGet] /api/Desk/unavailable
   - lists all unavailable desks. For example,
   ```
@@ -177,7 +177,7 @@ All methods are with [AllowAnonymous] attribute so you do not need write your to
     "message": null
   }
   ```
-  
+
   - returns error if there is no location with id `locationId`
 
 - [HttpPost] /api/Desk/
@@ -288,7 +288,7 @@ All methods are with [AllowAnonymous] attribute so you do not need write your to
   - you cannot update a reservation if there are overlaping reservations
   - you cannot update a reservation if there is not such desk
   - you are not owner of reservation
-  
+
 # Unit testing
 I tested services in this project. I didn't have much time to finish unit testing `ReservationService`. I used `XUnitTest`
- 
+
